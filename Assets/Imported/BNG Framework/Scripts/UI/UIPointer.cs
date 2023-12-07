@@ -95,8 +95,8 @@ public virtual void SetupXRITRaycaster() {
 
     if(xrRay == null) {
 
-        xrRay = gameObject.AddComponent<XRRayInteractor>();
         ActionBasedController abc = gameObject.AddComponent<ActionBasedController>();
+        xrRay = gameObject.AddComponent<XRRayInteractor>();
 
         // Setup default ui input action
         if (VRUISystem.Instance.UIInputAction != null) {
