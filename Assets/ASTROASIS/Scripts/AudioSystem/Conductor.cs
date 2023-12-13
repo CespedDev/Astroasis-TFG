@@ -80,22 +80,29 @@ namespace AudioSystem
             loopPositionInBeatsNormalize = loopPositionInBeats - Mathf.Floor(loopPositionInBeats);
         }
 
-        public void OnAction()
+        public void OnAction(GameObject gameObject)
         {
+            TimedHit timedHit;
             if (loopPositionInBeatsNormalize >= 0 && loopPositionInBeatsNormalize <= perfectHitOffset ||
                 loopPositionInBeatsNormalize <= 1 && loopPositionInBeatsNormalize >= 1 - perfectHitOffset)
             {
-                OnTimeEvent.Invoke(TimedHit.Perfect);
+                timedHit = TimedHit.Perfect;
             }
             else if (loopPositionInBeatsNormalize >= 0 && loopPositionInBeatsNormalize <= goodHitOffset ||
                      loopPositionInBeatsNormalize <= 1 && loopPositionInBeatsNormalize >= 1 - goodHitOffset)
             {
-                OnTimeEvent.Invoke(TimedHit.Good);
+                timedHit = TimedHit.Good;
             }
             else
             {
-                OnTimeEvent.Invoke(TimedHit.Bad);
+                timedHit = TimedHit.Bad;
             }
+
+            //Debug
+            OnTimeEvent.Invoke(timedHit);
+
+            gameObject.GetComponentInChildren<UIDamageController>().ShowUI(timedHit);
+
         }
     }
 }

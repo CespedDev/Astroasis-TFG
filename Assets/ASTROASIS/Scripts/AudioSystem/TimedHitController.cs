@@ -7,7 +7,7 @@ namespace AudioSystem
 {
     public class TimedHitController : MonoBehaviour
     {
-        public event Action OnActionEvent;
+        public event Action<GameObject> OnActionEvent;
 
         void Start()
         {
@@ -15,9 +15,20 @@ namespace AudioSystem
             OnActionEvent += Conductor.instance.OnAction;
         }
 
-        public void Action()
+        public void Action(RaycastHit hit)
         {
-            OnActionEvent.Invoke();
+            if (hit.transform.tag == "Enemy")
+            {
+                OnActionEvent.Invoke(hit.transform.gameObject);
+            }
+        }
+
+        public void Action(Transform hit)
+        {
+            if (hit.tag == "Enemy")
+            {
+                OnActionEvent.Invoke(hit.transform.gameObject);
+            }
         }
 
         private void OnTime(TimedHit timedHit)
