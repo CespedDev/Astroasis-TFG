@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace AudioSystem
 {
-    public class Conductor : MonoBehaviour
+    public class RhythmManager : MonoBehaviour
     {
         
-        [field: SerializeField] public static Conductor instance { get; private set; }
+        [field: SerializeField] public static RhythmManager instance { get; private set; }
 
         // SERIALIZED DATA -------------------------------------------
         /// <summary>

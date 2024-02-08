@@ -6,9 +6,11 @@ namespace AudioSystem
 {
     public enum TimedHit
     {
-        none    = 0,
-        Perfect = 1,
-        Good    = 2,
-        Bad     = 3,
+        none     = 0,
+        Perfect  = 1,
+        Excelent = 2,
+        Good     = 3,
+        Regular  = 4,
+        Bad      = 5,
     }
 }

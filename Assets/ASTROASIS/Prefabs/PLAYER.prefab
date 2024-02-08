@@ -142,7 +142,7 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5643164789837412180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSystem.TimedHitController, Assembly-CSharp
         m_MethodName: Action
         m_Mode: 0
@@ -251,11 +251,6 @@ PrefabInstance:
       propertyPath: onShootEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1114456623013120188, guid: 9f71a5ca74b14ff4a89316cd9faf9208,
-        type: 3}
-      propertyPath: onRaycastHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5643164789837412180}
     - target: {fileID: 1114456623013120188, guid: 9f71a5ca74b14ff4a89316cd9faf9208,
         type: 3}
       propertyPath: onRaycastHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -476,11 +471,6 @@ PrefabInstance:
       propertyPath: onShootEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Action
       objectReference: {fileID: 0}
-    - target: {fileID: 1114456623013120188, guid: 9f71a5ca74b14ff4a89316cd9faf9208,
-        type: 3}
-      propertyPath: onRaycastHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5643164789837412180}
     - target: {fileID: 1114456623013120188, guid: 9f71a5ca74b14ff4a89316cd9faf9208,
         type: 3}
       propertyPath: onRaycastHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1036,10 +1026,6 @@ PrefabInstance:
         type: 3}
       insertIndex: 6
       addedObject: {fileID: 1145848212385009316}
-    - targetCorrespondingSourceObject: {fileID: 2093207351254691191, guid: 4ac7df741a9c0a2418ec19477729ee3d,
-        type: 3}
-      insertIndex: 10
-      addedObject: {fileID: 5643164789837412180}
     - targetCorrespondingSourceObject: {fileID: 2683195716758895194, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       insertIndex: -1
@@ -1150,18 +1136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.03
---- !u!114 &5643164789837412180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706398535511216191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42e370e0fbf428a4689d0aee63b2b915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6706398535511641105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093207351254462809, guid: 4ac7df741a9c0a2418ec19477729ee3d,
@@ -1458,7 +1432,7 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5643164789837412180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioSystem.TimedHitController, Assembly-CSharp
         m_MethodName: Action
         m_Mode: 0
