@@ -5,49 +5,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AudioSystem
+namespace RhythmSystem
 {
     public class RhythmManager : MonoBehaviour
     {
-        
-        [field: SerializeField] public static RhythmManager instance { get; private set; }
+        [field: Header("Song parameters")]
 
-        // SERIALIZED DATA -------------------------------------------
         /// <summary>
         /// Song beats per minute. This is determined by the song you're trying to sync up to.
         /// </summary>
-        [field: Header("Song parameters"), SerializeField] public float songBpm { get; private set; }
+        [field: SerializeField] public float songBpm { get; private set; }
+        
         /// <summary>
         /// The offset to the first beat of the song in seconds.
         /// </summary>
         [field: SerializeField] public float firstBeatOffset { get; private set; }
+        
         /// <summary>
         /// An AudioSource attached to this GameObject that will play the music.
         /// </summary>
         [field: SerializeField] public AudioSource musicSource { get; private set; }
+        
         /// <summary>
         /// The number of beats in each loop.
         /// </summary>
         [field: SerializeField] public float beatsPerLoop { get; private set; }
-        [field: Header("Timed hit settings"), SerializeField] public float goodHitOffset    { get; private set; }
-        [field: SerializeField] public float perfectHitOffset { get; private set; }
+
+        [field: Header("Timed hit settings")]
+
+        /// <summary>
+        /// All accuracy bonuses. Is important to maintain better to worst order.
+        /// </summary>
+        [SerializeField] private List<RhythmBonusSO> accuracyBonuses;
 
 
         // CONDUCTOR DATA -------------------------------------------
-        public float secPerBeat { get; private set; }
-        public float songPosition { get; private set; }
-        public float songPositionInBeats { get; private set; }
-        public float dspSongTime { get; private set; }
-        public int completedLoops { get; private set; } = 0;
-        public float loopPositionInBeats { get; private set; }
-        public float loopPositionInBeatsNormalize { get; private set; }
-
-        // EVENTS ---------------------------------------------------
-        public event Action<TimedHit> OnTimeEvent;
+        public float secPerBeat                     { get; private set; }
+        public float songPosition                   { get; private set; }
+        public float songPositionInBeats            { get; private set; }
+        public float dspSongTime                    { get; private set; }
+        public int   completedLoops                 { get; private set; } = 0;
+        public float loopPositionInBeats            { get; private set; }
+        public float loopPositionInBeatsNormalize   { get; private set; }
 
         void Awake()
         {
-            instance = this;
             musicSource = GetComponent<AudioSource>();
         }
 
@@ -80,29 +82,21 @@ namespace AudioSystem
             loopPositionInBeatsNormalize = loopPositionInBeats - Mathf.Floor(loopPositionInBeats);
         }
 
-        public void OnAction(GameObject gameObject)
+        public void CheckRhythm(RhythmChecker rhythmChecker)
         {
-            TimedHit timedHit;
-            if (loopPositionInBeatsNormalize >= 0 && loopPositionInBeatsNormalize <= perfectHitOffset ||
-                loopPositionInBeatsNormalize <= 1 && loopPositionInBeatsNormalize >= 1 - perfectHitOffset)
+            RhythmBonusSO finalBonus = null;
+
+            foreach (RhythmBonusSO bonus in accuracyBonuses)
             {
-                timedHit = TimedHit.Perfect;
-            }
-            else if (loopPositionInBeatsNormalize >= 0 && loopPositionInBeatsNormalize <= goodHitOffset ||
-                     loopPositionInBeatsNormalize <= 1 && loopPositionInBeatsNormalize >= 1 - goodHitOffset)
-            {
-                timedHit = TimedHit.Good;
-            }
-            else
-            {
-                timedHit = TimedHit.Bad;
+                if (loopPositionInBeatsNormalize > -bonus.BeatAccuracy && 
+                    loopPositionInBeatsNormalize < bonus.BeatAccuracy)
+                {
+                    finalBonus = bonus;
+                    break;
+                }
             }
 
-            //Debug
-            OnTimeEvent.Invoke(timedHit);
-
-            gameObject.GetComponentInChildren<UIDamageController>().ShowUI(timedHit);
-
+            rhythmChecker.rhythmBonus = finalBonus;
         }
     }
 }

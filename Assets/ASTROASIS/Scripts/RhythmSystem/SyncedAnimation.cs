@@ -34,8 +34,10 @@ public class SyncedAnimation : MonoBehaviour
 
     void Update()
     {
+        // CHANGE THIS !!!!!!!!!!!!!
         //Start playing the current animation from wherever the current conductor loop is
-        animator.Play(currentState, -1, (AudioSystem.RhythmManager.instance.loopPositionInBeatsNormalize)); 
+        //animator.Play(currentState, -1, (RhythmSystem.RhythmManager.instance.loopPositionInBeatsNormalize); 
+
         //Set the speed to 0 so it will only change frames when you next update it
         animator.speed = 0;
     }

@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore()
     {
+        // Carlos 9-2-24: Make a scriptable object that works like a queue of score 
+        // which where given by external objects like enemies.
+
         /*
         if (data.GetAttributeValue(AttributeType.SCORE_VALUE, out float value))
             gameData.score += value * gameData.bonus;

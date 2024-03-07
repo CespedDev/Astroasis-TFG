@@ -6,10 +6,20 @@ using UnityEngine.Events;
 
 public class CollisionEventInvoker : MonoBehaviour
 {
-    public UnityEvent OnCollision;
+    [SerializeField]
+    private List<TaggedEvent> taggedEvents;
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision collision)
     {
-        OnCollision.Invoke();
+        taggedEvents.Find(x => x.tag == collision.transform.tag).OnCollision.Invoke();
+
+        //Invoke
+    }
+
+    [Serializable]
+    private class TaggedEvent
+    {
+        public string tag = "Untagged";
+        public UnityEvent OnCollision;
     }
 }
