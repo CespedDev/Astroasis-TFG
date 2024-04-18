@@ -1,5 +1,6 @@
 // Copyright (c) Carlos Cabrera 06/09/2023
 
+using RootMotion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace RhythmSystem
 {
     public class RhythmManager : MonoBehaviour
     {
+        public static RhythmManager Instance { get; private set; }
+
         [field: Header("Song parameters")]
 
         /// <summary>
@@ -50,7 +53,18 @@ namespace RhythmSystem
 
         void Awake()
         {
+            // SINGLETON control
+            if (Instance != null && Instance != this)
+                Destroy(this);
+            else
+                Instance = this;
+
             musicSource = GetComponent<AudioSource>();
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this) Instance = null; 
         }
 
         void Start()
@@ -82,14 +96,18 @@ namespace RhythmSystem
             loopPositionInBeatsNormalize = loopPositionInBeats - Mathf.Floor(loopPositionInBeats);
         }
 
+        /// <summary>
+        /// Check the bonus should be apply
+        /// </summary>
+        /// <param name="rhythmChecker"></param>
         public void CheckRhythm(RhythmChecker rhythmChecker)
         {
             RhythmBonusSO finalBonus = null;
 
             foreach (RhythmBonusSO bonus in accuracyBonuses)
             {
-                if (loopPositionInBeatsNormalize > -bonus.BeatAccuracy && 
-                    loopPositionInBeatsNormalize < bonus.BeatAccuracy)
+                if (loopPositionInBeatsNormalize >= 1 - bonus.BeatAccuracy || 
+                    loopPositionInBeatsNormalize <=     bonus.BeatAccuracy)
                 {
                     finalBonus = bonus;
                     break;

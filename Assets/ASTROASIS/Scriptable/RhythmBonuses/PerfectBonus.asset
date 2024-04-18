@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PerfectBonus
   m_EditorClassIdentifier: 
   Bonus: 2
-  BeatAccuracy: 0.1
+  BeatAccuracy: 0.05

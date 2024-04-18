@@ -14,9 +14,9 @@ namespace RhythmSystem
 
         /// <summary>
         /// Accuracy needed to perform a hit of this type,
-        /// being 0 the max accuracy and 1 the distance to the next beat
+        /// being 0 the max accuracy and 0.5f no accuracy
         /// </summary>
-        [Range(0f, 1f)]
+        [Range(0f, 0.5f)]
         public float BeatAccuracy = 0;
 
         // Posibility of add other reference like hit sound

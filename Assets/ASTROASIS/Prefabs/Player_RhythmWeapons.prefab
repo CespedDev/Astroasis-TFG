@@ -70,11 +70,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7287344647023659390}
     m_Modifications:
-    - target: {fileID: 957949538158256131, guid: 761da5f0147ee754cad433ad8faf65d3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4649270853908304186, guid: 761da5f0147ee754cad433ad8faf65d3,
         type: 3}
       propertyPath: m_Name
@@ -252,11 +247,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7287344647023659390}
     m_Modifications:
-    - target: {fileID: 957949538158256131, guid: 761da5f0147ee754cad433ad8faf65d3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4649270853908304186, guid: 761da5f0147ee754cad433ad8faf65d3,
         type: 3}
       propertyPath: m_Name
@@ -366,7 +356,12 @@ PrefabInstance:
     - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -376,17 +371,17 @@ PrefabInstance:
     - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5245282
+      value: 0.21568628
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.5245282
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716760517856, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.5245282
+      value: 0.15294118
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716791022644, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -451,7 +446,12 @@ PrefabInstance:
     - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -461,17 +461,17 @@ PrefabInstance:
     - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5245282
+      value: 0.21568628
       objectReference: {fileID: 0}
     - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.5245282
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 2698914753532704736, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.5245282
+      value: 0.15294118
       objectReference: {fileID: 0}
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -481,7 +481,12 @@ PrefabInstance:
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -491,17 +496,17 @@ PrefabInstance:
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5245282
+      value: 0.21568628
       objectReference: {fileID: 0}
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.5245282
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 2700793299676764942, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.5245282
+      value: 0.15294118
       objectReference: {fileID: 0}
     - target: {fileID: 2899861685406517250, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}

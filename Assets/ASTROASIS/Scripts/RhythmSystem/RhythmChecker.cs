@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,20 +33,30 @@ namespace RhythmSystem
         {
             // Invoke RhythmCheckEvent(RhythmChecker)
             Debug.Log("Checking Rhythm");
+            
+            // Test if bonus is null
+            if (RhythmManager.Instance == null)
+            {
+                Debug.LogError("There is no RhythmManager");
+                return;
+            }
+
+            // Change rhythm bonus
+            RhythmManager.Instance.CheckRhythm(this);
+
 
             // Change weapon damage
             switch (damageDealerType)
             {
                 case DamageDealerType.RaycastWeapon:
-                    GetComponent<BNG.RaycastWeapon>().Damage  = damage * rhythmBonus.Bonus;
+                    GetComponent<BNG.RaycastWeapon>().Damage = damage * rhythmBonus.Bonus;
                     break;
                 case DamageDealerType.DamageCollider:
                     GetComponent<BNG.DamageCollider>().Damage = damage * rhythmBonus.Bonus;
                     break;
             }
 
-            Debug.Log($"Base damage:  {damage}\n" +
-                      $"Rhythm bonus: {rhythmBonus.Bonus}");
+            Debug.Log($"Base damage: {damage} Rhythm bonus: {rhythmBonus.Bonus}");
         }
 
         enum DamageDealerType

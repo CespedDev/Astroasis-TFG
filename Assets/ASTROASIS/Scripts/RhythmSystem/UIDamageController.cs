@@ -15,15 +15,12 @@ public class UIDamageController : MonoBehaviour
         text.gameObject.SetActive(false);
     }
 
-    public void ShowUI(TimedHit hitType)
+    public void ShowUI(RhythmBonusSO bonus)
     {
         Color color;
-        color = hitType == TimedHit.Perfect ? Color.green :
-                hitType == TimedHit.Good ? Color.yellow :
-                Color.red;
-        text.color = color;
+        //text.color = color;
 
-        text.text = hitType.ToString();
+        text.text = bonus.name;
 
         text.gameObject.SetActive(true);
         StartCoroutine(HideUI());

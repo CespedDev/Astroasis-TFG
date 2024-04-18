@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RegularBonus
   m_EditorClassIdentifier: 
   Bonus: 0.5
-  BeatAccuracy: 0.5
+  BeatAccuracy: 0.25
