@@ -10,16 +10,25 @@ public class ForwardMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform forward;
 
-    void Start()
+    private void OnEnable()
     {
         StartCoroutine(delayStart());
         characterController = GetComponent<CharacterController>();
 
         SmoothLocomotion loco = GetComponent<SmoothLocomotion>();
-        loco.MovementSpeed     = 0;
-        loco.StrafeSpeed       = 4;
+        loco.MovementSpeed = 0;
+        loco.StrafeSpeed = 4;
         loco.StrafeSprintSpeed = 4;
-        loco.ForwardDirection  = forward;
+        loco.ForwardDirection = forward;
+    }
+    private void OnDisable()
+    {
+        SmoothLocomotion loco = GetComponent<SmoothLocomotion>();
+        start = false;
+        loco.MovementSpeed = 1.25f;
+        loco.StrafeSpeed = 1.25f;
+        loco.StrafeSprintSpeed = 1.25f;
+        loco.ForwardDirection = null;
     }
 
     // Update is called once per frame

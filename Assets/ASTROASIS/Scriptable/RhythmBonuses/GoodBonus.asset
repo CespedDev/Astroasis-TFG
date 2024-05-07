@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bonus: 1
   BeatAccuracy: 0.15
+  color: {r: 1, g: 0.9098039, b: 0.03137255, a: 1}

@@ -19,6 +19,12 @@ namespace RhythmSystem
         [Range(0f, 0.5f)]
         public float BeatAccuracy = 0;
 
+        /// <summary>
+        /// Bonus text color. Used on debug texts, like 
+        /// in dummies.
+        /// </summary>
+        public Color color = Color.white;
+
         // Posibility of add other reference like hit sound
 
     }

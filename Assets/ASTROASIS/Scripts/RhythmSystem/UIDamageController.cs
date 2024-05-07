@@ -15,12 +15,14 @@ public class UIDamageController : MonoBehaviour
         text.gameObject.SetActive(false);
     }
 
-    public void ShowUI(RhythmBonusSO bonus)
+    public void ShowUI()
     {
-        Color color;
-        //text.color = color;
+        RhythmBonusSO bonus = RhythmManager.Instance.lastRhythm;
+        
+        if (bonus == null) return;
 
-        text.text = bonus.name;
+        text.text  = bonus.name.Replace("Bonus", "");
+        text.color = RhythmManager.Instance.lastRhythm.color;
 
         text.gameObject.SetActive(true);
         StartCoroutine(HideUI());

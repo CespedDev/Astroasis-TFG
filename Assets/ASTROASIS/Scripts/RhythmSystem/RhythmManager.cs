@@ -51,6 +51,9 @@ namespace RhythmSystem
         public float loopPositionInBeats            { get; private set; }
         public float loopPositionInBeatsNormalize   { get; private set; }
 
+        // RHYTHM CHECKED
+        public RhythmBonusSO lastRhythm { get; private set; }
+
         void Awake()
         {
             // SINGLETON control
@@ -100,21 +103,21 @@ namespace RhythmSystem
         /// Check the bonus should be apply
         /// </summary>
         /// <param name="rhythmChecker"></param>
-        public void CheckRhythm(RhythmChecker rhythmChecker)
+        public void CheckRhythm(out RhythmBonusSO rhythmBonus)
         {
-            RhythmBonusSO finalBonus = null;
+            lastRhythm = null;
 
             foreach (RhythmBonusSO bonus in accuracyBonuses)
             {
                 if (loopPositionInBeatsNormalize >= 1 - bonus.BeatAccuracy || 
                     loopPositionInBeatsNormalize <=     bonus.BeatAccuracy)
                 {
-                    finalBonus = bonus;
+                    lastRhythm = bonus;
                     break;
                 }
             }
 
-            rhythmChecker.rhythmBonus = finalBonus;
+            rhythmBonus = lastRhythm;
         }
     }
 }

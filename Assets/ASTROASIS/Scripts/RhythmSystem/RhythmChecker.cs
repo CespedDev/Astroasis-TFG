@@ -12,7 +12,8 @@ namespace RhythmSystem
 
         private float damage;
 
-        public RhythmBonusSO rhythmBonus { get; internal set;}
+        [NonSerialized]
+        public RhythmBonusSO rhythmBonus;
 
         private void Start()
         {
@@ -42,7 +43,7 @@ namespace RhythmSystem
             }
 
             // Change rhythm bonus
-            RhythmManager.Instance.CheckRhythm(this);
+            RhythmManager.Instance.CheckRhythm(out rhythmBonus);
 
 
             // Change weapon damage

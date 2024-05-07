@@ -1549,6 +1549,7 @@ GameObject:
   - component: {fileID: 1912111762427441329}
   - component: {fileID: 5315093496119590339}
   - component: {fileID: 1951358599927018853}
+  - component: {fileID: 3090737918213810416}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Enemy
@@ -1605,7 +1606,19 @@ MonoBehaviour:
   RemoveBulletHolesOnDeath: 1
   onDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2472096198821902771}
+        m_TargetAssemblyTypeName: UIDamageController, Assembly-CSharp
+        m_MethodName: ShowUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestroyed:
     m_PersistentCalls:
       m_Calls:
@@ -1621,9 +1634,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: e2967b82f72e0424082ae7e61d6bc515, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
+      - m_Target: {fileID: 3090737918213810416}
+        m_TargetAssemblyTypeName: DummyController, Assembly-CSharp
+        m_MethodName: Killed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1703,6 +1716,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.31, y: 1.0834097, z: 0.3696699}
   m_Center: {x: 0, y: 1.2617047, z: -0.000114917755}
+--- !u!114 &3090737918213810416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068977542038515762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5c8a6728f9c7b4d9bfd6e12afb7048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: cd44589b13674fc4f97eec43ec7bc615, type: 2}
 --- !u!1 &1133208286291338787
 GameObject:
   m_ObjectHideFlags: 0
@@ -9386,7 +9412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PERFECT
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -47392,7 +47418,7 @@ PrefabInstance:
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 692.913
+      value: 2323.8992
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
