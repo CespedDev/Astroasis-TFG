@@ -4,15 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private GameEventSO startEvent;
+    [SerializeField] private GameEventSO loadingEvent;
 
     public void OnStart()
     {
-        Debug.Log("LOADING level");
-        SceneManager.LoadScene("Nivel", LoadSceneMode.Additive);
-        startEvent.Raise();
+        loadingEvent.Raise();
+
         Debug.Log("UNLOADING main menu");
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("MainMenu"));
+
+        Debug.Log("LOADING level");
+        SceneManager.LoadScene("Nivel", LoadSceneMode.Additive);
+        
+        
     }
 
     public void Options()

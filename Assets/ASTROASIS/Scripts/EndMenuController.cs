@@ -10,26 +10,25 @@ public class EndMenuController : MonoBehaviour
 {
     public TMP_Text score;
 
-    [SerializeField] private GameEventSO startEvent;
-    [SerializeField] private Transform pivot;
+    [SerializeField] private GameEventSO loadingEvent;
 
     private void OnEnable()
     {
         if(GameManager.Instance != null)
             score.text = $"Score: {GameManager.Instance.gameData.score}";
-
-        transform.position = pivot.position;
     }
 
     public void OnRestart()
     {
+        loadingEvent.Raise();
+
         Debug.Log("UNLOADING level");
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Nivel"));
 
         Debug.Log("LOADING level");
-        SceneManager.LoadScene("Nivel", LoadSceneMode.Additive);
-        startEvent.Raise();
-        
+        SceneManager.LoadSceneAsync("Nivel", LoadSceneMode.Additive);
+                        
+        Destroy(gameObject);
     }
 
     public void OnExit()

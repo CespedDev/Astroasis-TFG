@@ -5,21 +5,19 @@ using UnityEngine.SocialPlatforms.Impl;
 
 // Namespaces
 using GameplayData;
+using GameplayEvents;
 
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-
     public static GameManager Instance { get { return _instance; } }
 
     public GameData gameData { get; private set; }
 
+    [SerializeField]
+    private GameEventSO StartEvent;
 
-    void Start()
-    {
-        CreateGameData();
-    }
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -28,6 +26,12 @@ public class GameManager : MonoBehaviour
             _instance = this;
     }
 
+    void Start()
+    {
+        CreateGameData();
+        StartCoroutine(StartingLevel());
+    }
+    
     void Update()
     {
         
@@ -54,5 +58,12 @@ public class GameManager : MonoBehaviour
     public void ResetBonus()
     {
         gameData.bonus = 1;
+    }
+
+    public IEnumerator StartingLevel()
+    {
+        yield return new WaitForSeconds(2);
+        StartEvent?.Raise();
+        Debug.Log("GO!!!");
     }
 }
