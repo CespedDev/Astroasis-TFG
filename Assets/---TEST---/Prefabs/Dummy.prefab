@@ -678,7 +678,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b9f3d9cab2779a1418a94d74015d5d0d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1806,6 +1806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: cd44589b13674fc4f97eec43ec7bc615, type: 2}
   dummyUndestroyed: {fileID: 222259138805245510}
+  dummyDestroyed: {fileID: 7532304727168218139}
   dummyCollider: {fileID: 1939278422323879742}
 --- !u!135 &1938181074340986954
 SphereCollider:
@@ -1826,7 +1827,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1133208286291338787
 GameObject:
@@ -45261,10 +45262,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: b9f3d9cab2779a1418a94d74015d5d0d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -1
   Loop: 0
   Mute: 0
   Spatialize: 0
