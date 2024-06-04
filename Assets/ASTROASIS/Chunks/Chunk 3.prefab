@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6138465772998810279}
   - component: {fileID: 485800229255677535}
   - component: {fileID: 4954789325636411774}
+  - component: {fileID: 7513484590304929742}
+  - component: {fileID: 1623798905694465550}
   m_Layer: 0
   m_Name: Chunk 3
   m_TagString: Untagged
@@ -139,6 +141,48 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &7513484590304929742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2413436390287146527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2612222, y: 4.686674, z: 9.999991}
+  m_Center: {x: -1.94, y: 2.2892885, z: 0}
+--- !u!65 &1623798905694465550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2413436390287146527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2612222, y: 4.686674, z: 9.999991}
+  m_Center: {x: 4.21, y: 2.2892885, z: 0}
 --- !u!1001 &186928104704681049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -805,26 +849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -68459193838113870, guid: d91f6c46edab1c34fb7eb553d637c1ec,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b2ffd65dc6ff0914dac1c49622847b8c, type: 2}
     - target: {fileID: 919132149155446097, guid: d91f6c46edab1c34fb7eb553d637c1ec,
         type: 3}
       propertyPath: m_Name
       value: Bar
       objectReference: {fileID: 0}
-    - target: {fileID: 5662325961199517401, guid: d91f6c46edab1c34fb7eb553d637c1ec,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 880bca1e2e94d6449b4506009194b7c0, type: 2}
-    - target: {fileID: 7816564021956499912, guid: d91f6c46edab1c34fb7eb553d637c1ec,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c3db552b14a7fd42bfaf5313aa60d76, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -914,21 +943,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bud_Light
       objectReference: {fileID: 0}
-    - target: {fileID: 3347101871409917786, guid: 846261ddef879cd429d5829bf3a71da7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b2ffd65dc6ff0914dac1c49622847b8c, type: 2}
-    - target: {fileID: 4167078505580255829, guid: 846261ddef879cd429d5829bf3a71da7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b2ffd65dc6ff0914dac1c49622847b8c, type: 2}
-    - target: {fileID: 7055761233452363344, guid: 846261ddef879cd429d5829bf3a71da7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c3db552b14a7fd42bfaf5313aa60d76, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2298,26 +2312,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4886163521208921845, guid: 7825b3324b2b04c46bd4615950dce4b0,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1dcaedfd544ed3c4d896355ea8ec599e, type: 2}
     - target: {fileID: 919132149155446097, guid: 7825b3324b2b04c46bd4615950dce4b0,
         type: 3}
       propertyPath: m_Name
       value: 7_Eleven
       objectReference: {fileID: 0}
-    - target: {fileID: 2899623843478408738, guid: 7825b3324b2b04c46bd4615950dce4b0,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9e6e46edd4ea6ab45a78ed8c3046a3e4, type: 2}
-    - target: {fileID: 4350398824809982605, guid: 7825b3324b2b04c46bd4615950dce4b0,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b2ffd65dc6ff0914dac1c49622847b8c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2486,26 +2485,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -5415041867533294057, guid: da6b5ecbbc62d9a409d987e96a6649a4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 880bca1e2e94d6449b4506009194b7c0, type: 2}
     - target: {fileID: 919132149155446097, guid: da6b5ecbbc62d9a409d987e96a6649a4,
         type: 3}
       propertyPath: m_Name
       value: Rolex_Chino
       objectReference: {fileID: 0}
-    - target: {fileID: 6501086882439874729, guid: da6b5ecbbc62d9a409d987e96a6649a4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9e6e46edd4ea6ab45a78ed8c3046a3e4, type: 2}
-    - target: {fileID: 6642274432933311481, guid: da6b5ecbbc62d9a409d987e96a6649a4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 880bca1e2e94d6449b4506009194b7c0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

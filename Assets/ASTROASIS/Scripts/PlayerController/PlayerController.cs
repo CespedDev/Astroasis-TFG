@@ -20,6 +20,8 @@ namespace PlayerSystem
         {
             characterController = GetComponent<CharacterController>();
             locomotion          = GetComponent<SmoothLocomotion>();
+
+            ResetState();
         }
 
         void FixedUpdate()

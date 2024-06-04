@@ -382,6 +382,13 @@ namespace BNG {
                 input.VibrateController(0.1f, 0.2f, 0.1f, thisGrabber.HandSide);
             }
 
+            // Call Shoot Event
+            // Carlos Cabrera (2024/06/01): EDITED EXECUTION ORDER OF THIS EVENT
+            if (onShootEvent != null)
+            {
+                onShootEvent.Invoke();
+            }
+
             // Use projectile if Time has been slowed
             bool useProjectile = AlwaysFireProjectile || (FireProjectileInSlowMo && Time.timeScale < 1);
             if (useProjectile) {
@@ -436,11 +443,6 @@ namespace BNG {
                 if (slideForcedBack && ws != null) {
                     ws.LockBack();
                 }
-            }
-
-            // Call Shoot Event
-            if(onShootEvent != null) {
-                onShootEvent.Invoke();
             }
 
             // Store our last shot time to be used for rate of fire

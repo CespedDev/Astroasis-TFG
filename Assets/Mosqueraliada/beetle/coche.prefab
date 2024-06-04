@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 5761160591759340347}
   - component: {fileID: 8672836246231612574}
   - component: {fileID: 6897524325882300500}
+  - component: {fileID: 8433085025581761224}
   m_Layer: 0
   m_Name: coche
   m_TagString: Untagged
@@ -443,7 +444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4951727187968076161}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7063746, y: -0.032192353, z: -0.7063726, w: 0.032192852}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -3.66, y: 1.366, z: 160.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -455,7 +456,7 @@ Transform:
   - {fileID: 5874455598010267477}
   - {fileID: 3709989301703217682}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -180, y: 90, z: 5.218994}
+  m_LocalEulerAnglesHint: {x: -180, y: 90, z: 0}
 --- !u!33 &8672836246231612574
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -506,6 +507,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8433085025581761224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4951727187968076161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.665231, y: 3.2140026, z: 3.297313}
+  m_Center: {x: -0.018007755, y: 0.073873885, z: 0.0000013668403}
 --- !u!1 &6543046991994465775
 GameObject:
   m_ObjectHideFlags: 0
